@@ -12,7 +12,12 @@
   </head>
   <body>
     <section class="to-do">
-        <h1>To-Do List</h1>
+      <h1>To-Do List</h1>        
+            <textarea name="text_area_id" id="text_area_id" required></textarea>
+            <button onclick="addItem()" type="submit">Add</button>    
+      <ul id="ul_id">
+        <!-- Li elements will be injected here -->
+      </ul>
     </section>
 
     <script src="assets/js/main.js"></script>
