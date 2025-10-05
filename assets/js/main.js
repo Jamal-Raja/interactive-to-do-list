@@ -57,15 +57,27 @@ function addItem() {
  * - clicking the edit icon allows user to edit the associated item.
  */
 list.addEventListener("click", (e) => {
-  const bin = e.target.closest(".bin-icon")
-  const edit = e.target.closest(".edit-icon")
+  const bin = e.target.closest(".bin-icon");
+  const edit = e.target.closest(".edit-icon");
 
   if (bin) {
     toDo.splice(e.target.closest("li").id, 1);
     refreshList();
   } else if (edit) {
-    // RUN THIS CODE WHEN USER PRESSES EDIT
-    // e.target.closest("li")
+    const li = e.target.closest("li");
+    const idx = Number(li.id);
+    const current = toDo[idx];
+
+    const promptResponse = prompt("Edit item:", current);
+    if (promptResponse === null) return;
+
+    const userChanges = promptResponse.trim();
+    if (!userChanges) {
+      alert("Item cannot be empty.");
+      return;
+    }
+    toDo[idx] = userChanges;
+    refreshList();
   }
 });
 
