@@ -47,7 +47,22 @@ body {
   margin: 1rem 4rem;
 }
 
-.to-do li span {
+.edit-icon {
+  position: absolute;
+  right: 20px;
+  fill: #fff;
+  width: 20px;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.edit-icon:hover * {
+  stroke: rgb(255, 45, 251);
+  scale: 1.02;  
+  width: auto;
+}
+
+.bin-icon {
   position: absolute;
   right: 0;
   fill: #fff;
@@ -55,12 +70,23 @@ body {
   height: 24px;
 }
 
-.to-do span:hover {
+.bin-icon:hover {
   fill: red;
   scale: 1.1;
   cursor: pointer;
 }
 
-.to-do span:active {
-  scale: 0.95;
+.bin-icon:active,
+.edit-icon:active {
+  scale: 0.90;
 }
+
+.hidden {
+  display: none;
+}
+/* 
+.edit-container {
+  border: 2px solid hotpink;
+  position: fixed;
+  
+} */
