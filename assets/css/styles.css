@@ -38,6 +38,7 @@ body {
   border-radius: 1rem;
   background-color: rgb(32, 176, 32);
   color: #fff;
+  cursor: pointer;
 }
 
 .to-do li {
@@ -50,6 +51,8 @@ body {
   position: absolute;
   right: 0;
   fill: #fff;
+  width: 24px;
+  height: 24px;
 }
 
 .to-do span:hover {
