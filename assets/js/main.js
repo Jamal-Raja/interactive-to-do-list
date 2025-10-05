@@ -1,5 +1,5 @@
 const list = document.getElementById("ul_id");
-const toDo = ["Brush hair", "Feed dog", "Buy Crippsies", "bath my horse"];
+const toDo = ["Brush hair", "Feed dog", "Buy Crippsies", "bathe my horse"];
 
 /**
  * Render the current `toDo` array into the UL.
@@ -83,7 +83,7 @@ list.addEventListener("click", (e) => {
 
 /**
  * TO-DO:
- * 1. Implement edit feature
+ * 1. Implement edit feature === COMPLETE ===
  * 2. Improvee user input validation
  * 3. Maybe store list in localStorage to ensure data is not lost
  */
