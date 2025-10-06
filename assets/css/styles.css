@@ -215,7 +215,7 @@ body::before {
   background: linear-gradient(45deg, #6200ea, #b388ff, #ff6b6b);
   background-size: 300% 300%;
   color: #ffffff;
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: clamp(1rem, 3vw, 3.2rem);
   font-weight: 600;
   cursor: pointer;
   position: relative;
@@ -416,4 +416,46 @@ body::before {
     right: 10px;
     width: clamp(18px, 4vw, 20px);
   }
+}
+
+/* EDIT MODAL (Bootstrap Overrides) */
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  display: block;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header button {
+  padding: 0.25rem 1rem;
+}
+
+.modal-header button:hover {
+  box-shadow: 0 8px 25px rgba(234, 0, 59, 0.822);
+}
+
+.close {
+  border-radius: 50% !important;
+  width: auto !important;
+  font-size: xx-large !important;
+  background: #ff17455f !important;
+}
+
+.close:hover {
+  background: #ff1745ea !important;  
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 1rem;
+}
+
+.modal-footer {
+  justify-content: center !important;
 }
