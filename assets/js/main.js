@@ -111,5 +111,6 @@ list.addEventListener("click", (e) => {
  * 1. Implement edit feature === COMPLETE ===
  * 2. Improvee user input validation === COMPLETE ===
  * 3. Update edit functionality to use modal instead of window.prompt === COMPLETE ===
- * 4. Maybe store list in localStorage to ensure data is not lost 
+ * 4. Update add functionality to use placeholder instead of window.alert === COMPLETE ===
+ * 5. Maybe store list in localStorage to ensure data is not lost 
  */
