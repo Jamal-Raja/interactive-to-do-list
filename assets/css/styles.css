@@ -417,3 +417,20 @@ body::before {
     width: clamp(18px, 4vw, 20px);
   }
 }
+
+
+/* EDIT MODAL */
+.modal {
+  display: inline;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close {
+  border-radius: 50% !important;
+  width: auto !important;
+  font-size: xx-large;
+}
