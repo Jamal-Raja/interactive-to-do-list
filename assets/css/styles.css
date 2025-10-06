@@ -419,8 +419,12 @@ body::before {
 }
 
 /* EDIT MODAL (Bootstrap Overrides) */
+.hidden {
+  display: none !important;
+}
+
 .modal {
-  display: inline;
+  display: block;
 }
 
 .modal-header {
@@ -447,10 +451,9 @@ body::before {
   background: #ff1745ea !important;  
 }
 
-
-
 .modal-body input {
   width: 100%;
+  padding: 1rem;
 }
 
 .modal-footer {

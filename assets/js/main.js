@@ -1,4 +1,5 @@
 const list = document.getElementById("ul_id");
+const editModal = document.getElementById("edit_modal");
 const toDo = ["Brush hair", "Feed dog", "Buy Crippsies", "bathe my horse"];
 
 /**
@@ -64,20 +65,34 @@ list.addEventListener("click", (e) => {
     toDo.splice(e.target.closest("li").id, 1);
     refreshList();
   } else if (edit) {
-    const li = e.target.closest("li");
-    const idx = Number(li.id);
-    const current = toDo[idx];
+    editModal.classList.toggle("hidden"); // Opens edit modal
 
-    const promptResponse = prompt("Edit item:", current);
-    if (promptResponse === null) return;
+    const li = e.target.closest("li"); // target associated item
+    const idx = Number(li.id); // get index of item
+    const current = toDo[idx]; // extract item info from toDo Array
+    const editInput = document.getElementById("edit_input");
 
-    const userChanges = promptResponse.trim();
-    if (!userChanges) {
-      alert("Item cannot be empty.");
-      return;
-    }
-    toDo[idx] = userChanges;
-    refreshList();
+    editInput.value = current; // Set value of input to the associated item
+
+    editModal.addEventListener("click", (e) => {
+      const close = e.target.closest("button.close");
+      const save = e.target.closest("button.save");
+
+      if (close) {
+        return editModal.classList.add("hidden");
+      } else if (save) {
+        const userChanges = editInput.value.trim();
+
+        if (!userChanges) {
+          alert("Item cannot be empty. ");
+          return;
+        }
+
+        toDo[idx] = userChanges;
+        refreshList();
+        editModal.classList.add("hidden");
+      }
+    });
   }
 });
 
@@ -86,4 +101,5 @@ list.addEventListener("click", (e) => {
  * 1. Implement edit feature === COMPLETE ===
  * 2. Improvee user input validation
  * 3. Maybe store list in localStorage to ensure data is not lost
+ * 4. Update edit functionality to use modal instead of window.prompt === COMPLETE ===
  */
