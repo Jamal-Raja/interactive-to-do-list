@@ -40,16 +40,26 @@ refreshList();
  */
 function addItem() {
   const textArea = document.getElementById("text_area_id");
-
+  textArea.setAttribute("placeholder", "Enter your task here");
   if (!textArea.value)
-    return window.alert("Please enter an item before pressing Add");
-  // =========== TODO: IMPROVE VALIDATION BY CHECKING ALL ITEMS IN LIST ===========
-  else if (textArea.value == toDo[0])
-    return window.alert("Error: You cannot have duplicate entries");
+    return textArea.setAttribute(
+      "placeholder",
+      "Please enter an item before pressing Add"
+    );
+  else if (toDo.includes(textArea.value)) {
+    textArea.value = "";
+    return textArea.setAttribute(
+      "placeholder",
+      "You cannot have duplicate entries"
+    );
+  }
 
   toDo.unshift(textArea.value);
   textArea.value = "";
   refreshList();
+}
+for (idx in toDo) {
+  console.log(toDo[idx]);
 }
 
 /**
@@ -99,7 +109,7 @@ list.addEventListener("click", (e) => {
 /**
  * TO-DO:
  * 1. Implement edit feature === COMPLETE ===
- * 2. Improvee user input validation
- * 3. Maybe store list in localStorage to ensure data is not lost
- * 4. Update edit functionality to use modal instead of window.prompt === COMPLETE ===
+ * 2. Improvee user input validation === COMPLETE ===
+ * 3. Update edit functionality to use modal instead of window.prompt === COMPLETE ===
+ * 4. Maybe store list in localStorage to ensure data is not lost 
  */
